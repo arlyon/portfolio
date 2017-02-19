@@ -15,4 +15,4 @@ def login_user(request):
     user = authenticate(username="demo", password="demopass")
     login(request, user)
 
-    return HttpResponseRedirect("/")
+    return HttpResponseRedirect("/"+request.GET.get("next")+"/")
