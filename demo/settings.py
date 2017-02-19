@@ -25,7 +25,7 @@ SECRET_KEY = '$te(u$bhm65mt91#1%8h4cp@v3t-_bsdpo5@3ger#hw$)6l-kg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.10.150', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'library.apps.LibraryConfig',
+    'runescapeflip.apps.FlipperConfig',
+    'demohandler.apps.DemohandlerConfig',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
