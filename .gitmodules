@@ -1,0 +1,6 @@
+[submodule "library"]
+	path = library
+	url = ssh://git@git.arlyon.co:1010/arlyon-co/library.git
+[submodule "runescapeflip"]
+	path = runescapeflip
+	url = ssh://git@git.arlyon.co:1010/arlyon-co/runescapeflip.git
