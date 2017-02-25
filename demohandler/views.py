@@ -7,9 +7,9 @@ def index(request):
     template = loader.get_template('demohandler/index.html')
     context = {}
     if request.user.is_authenticated():
-        projects = Project.objects.filter(display=True)
-        context['projects'] = projects
-    return HttpResponse(template.render(context,request))
+        return HttpResponse(template.render(context,request))
+    else:
+        return HttpResponseRedirect("/login/?next=library")
 
 def login_user(request):
     user = authenticate(username="demo", password="demopass")
