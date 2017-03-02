@@ -5,7 +5,8 @@ from .models import Project
 
 def index(request):
     template = loader.get_template('demohandler/index.html')
-    context = {}
+    projects = Project.objects.all()
+    context = {'projects':projects}
     if request.user.is_authenticated():
         return HttpResponse(template.render(context,request))
     else:
