@@ -1,7 +1,7 @@
 [submodule "library"]
-	path = library
+	path = apps/library
 	url = ssh://git@git.arlyon.co:1010/arlyon-co/library.git
 [submodule "runescapeflip"]
-	path = runescapeflip
+	path = apps/runescapeflip
 	url = ssh://git@git.arlyon.co:1010/arlyon-co/runescapeflip.git
 	branch = demo
