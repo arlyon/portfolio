@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "demo"
+name = "portfolio"
 version = "0.1.0"
 description = ""
 authors = ["Alexander Lyon <arlyon@me.com>"]
@@ -7,7 +7,6 @@ authors = ["Alexander Lyon <arlyon@me.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 django = "^3.0.3"
-djangorestframework = "^3.11.0"
 shortuuid = "^0.5.0"
 
 [tool.poetry.dev-dependencies]

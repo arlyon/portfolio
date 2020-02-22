@@ -1,1 +1,1 @@
-STATIC_ROOT = "/home/django/arlyon-demo/static/"
+STATIC_ROOT = "/home/django/arlyon-portfolio/static/"
