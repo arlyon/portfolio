@@ -1,22 +1,19 @@
-from django.http import HttpResponse, HttpResponseRedirect
+import shortuuid
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 from django.template import loader
-from django.contrib.auth import authenticate, login
+
 from .models import Project
+
 
 def index(request):
     template = loader.get_template('demohandler/index.html')
-    projects = Project.objects.all()
-    context = {'projects':projects}
-    if request.user.is_authenticated():
-        return HttpResponse(template.render(context,request))
-    else:
-        return HttpResponseRedirect("/login/?next=library")
+    projects = Project.objects.filter(display=1)
+    context = {'projects': projects}
+    if not request.user.is_authenticated:
+        username = shortuuid.uuid()
+        user = User.objects.create_user(username)
+        login(request, user)
 
-def login_user(request):
-    user = authenticate(username="demo", password="demopass")
-    login(request, user)
-
-    if request.GET.get("next") is not None:
-        return HttpResponseRedirect("/"+request.GET.get("next")+"/")
-
-    return HttpResponseRedirect("/")
+    return HttpResponse(template.render(context, request))

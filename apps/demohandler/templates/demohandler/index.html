@@ -120,7 +120,7 @@
                 <h1>demo.arlyon.co</h1>
                 <h2>Here is where I keep demos for my apps.</h2>
                 {% if user.is_authenticated %}
-                <h3>Have a look at them below.</h3>
+                <h3>Logged in as user <span style="font-family: monospace; font-size: 1.5em">{{ user.username }}</span></h3>
                 {% else %}
                 <h3>Log in below to explore the apps.</h3>
                 {% endif %}
